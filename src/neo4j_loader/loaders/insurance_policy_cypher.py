@@ -22,6 +22,7 @@ def create_insurance_policy_tx(tx, data):
         SET p.page_embedding = llm_response.page_embedding
         SET p.summary_embedding = llm_response.summary_embedding
         SET p.summary = llm_response.summary
+        SET p.source = $title + " - Page " + toString(page.page_number)
 
         WITH p, llm_response
 
